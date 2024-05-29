@@ -168,6 +168,7 @@ header{
     text-shadow: 2px 2px 3px #000;
     font-family: 'Shine More', sans-serif;
     letter-spacing: 3px;           
+    -webkit-text-stroke: 1px #7E0101;
 }
 
 .sobre{
