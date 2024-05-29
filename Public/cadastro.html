@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>São Paulo | Cadastro</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body class="bodyLogin">
+    <div class="containerCadastro">
+        <h1 class="tituloLogin">Cadastro</h1>
+        <div class="subtituloCadastro">
+            <div class="subtituloNome">
+                <p class="subtituloLogin">Nome</p>
+            </div>
+            <div class="subtituloEmail">
+                <p class="subtituloLogin">Email</p>
+            </div>
+        </div>
+        <div class="nomeEmailCadastro">
+            <input id="input_nome_cadastro" placeholder="Insira seu nome" class="inputLogin">
+            <input id="input_email_cadastro" type="email" placeholder="Insira seu email" class="inputLogin">
+        </div>
+        <div class="subtituloCadastro">
+            <div class="subtituloSenha">
+                <p class="subtituloLogin">Senha</p>
+            </div>
+            <div class="subtituloConfirmar">
+                <p class="subtituloLogin">Confirmar senha</p>
+            </div>
+        </div>
+        <div class="senhaCadastro">
+            <input id="input_senha_cadastro" type="password" placeholder="Insira sua senha" class="inputLogin">
+            <input id="input_confirmar_cadastro" type="password" placeholder="Confirme sua senha" class="inputLogin">
+        </div>
+        <br><br>
+        <button class="btnCadastro" onclick="cadastrar()">
+            Cadastrar
+        </button>
+        <br>
+        <p class="jaTemConta">
+            Já tem uma conta ?
+            <br>
+            <a href="login.html" class="cliqueAqui">Clique aqui</a>
+        </p>
+        <p class="jaTemConta">
+            <a href="index.html" class="cliqueAqui">
+                Voltar para o início
+            </a>
+        </p>
+    </div>
+</body>
+
+</html>
+<script>
+    function cadastrar(){
+        let nome = input_nome_cadastro.value
+        let email = input_email_cadastro.value
+        let senha = input_senha_cadastro.value
+        let confirmarSenha = input_confirmar_cadastro.value
+
+        fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nome,
+        emailServer: email,
+        senhaServer: senha,
+      }),
+    }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+        //   cardErro.style.display = "block";
+
+        //   mensagem_erro.innerHTML =
+        //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, "1000");
+
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+    }
+     
+</script>
