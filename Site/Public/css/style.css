@@ -1,0 +1,696 @@
+/* GERAL */
+
+body{
+    background-color: #ECEBE7;
+    font-family: 'Manrope';
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.header{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.headerColor{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    background-color: #ECEBE7;
+    color: #000;
+    border-bottom:solid #FF3737 0.2px;
+    transition: background-color 0.3s ease;
+}
+
+.navBar{
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    font-size: 23px;
+    font-weight: 570;
+}
+
+.imagemIndex{
+    width: 65px;
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.imagemIndex:hover{
+    cursor: pointer;
+}
+
+.home{
+    height: 20px;
+    color: #FF3737;
+}
+
+.linkHome{
+    text-decoration: none;
+}
+
+.home:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s;
+    color: #000;
+}
+
+.historias{
+    height: 20px;
+    color: #FF3737;
+}
+
+.linkHistorias{
+    text-decoration: none;
+}
+
+.historias:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s;
+    color: #000;
+}
+
+.contato{
+    height: 20px;
+    color: #FF3737;
+}
+
+.linkContato{
+    text-decoration: none;
+}
+
+.contato:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s;
+    color: #000;
+}
+
+.btnLoginIndex{
+    width: 160px;
+    height: 50px;
+    margin-right: 25px;
+    margin-top: 20px;
+    background-color: #FF3737;
+    border-color: #00000000;
+    border-radius: 30px;
+    font-size: 23px;
+    font-family: 'Manrope';
+    color: #FFF;
+}
+
+.btnLoginIndex:hover{
+    background-color: #7E0101;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.loginIndex{
+    text-decoration: none;
+    color: #FFF;
+}
+
+/* HOME */
+
+.banner{
+    width: 100%;
+    height: 650px;
+    background-image: url(../Assets/Imgs/morumbiCDB.jpeg);
+    background-position-y: -320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #0000008a;
+    background-blend-mode: multiply;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 2px #FF3737;
+    margin-top: 0;
+}
+
+.bannerTextoContainer{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.bannerTexto{
+    font-size: 45px;
+    font-weight: 350;
+    color: #FFF;
+    text-shadow: 2px 2px 3px #000;
+    font-family: 'Shine More', sans-serif;
+    letter-spacing: 3px;           
+    -webkit-text-stroke: 1px #7E0101;
+}
+
+.sobre{
+    width: 1223px;
+    height: 560px;
+    margin-left: 70px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+}
+
+.textoInformativo{
+    width: 600px;
+    height: 550px;
+    margin: 30px;
+}
+
+.tituloTexto{
+    font-size: 40px;
+    font-weight: 600;
+    color: #FF3737;
+}
+
+.texto{
+    font-size: 20px;
+    color: #000;
+    line-height: 32px;
+}
+
+.imagemSobre{
+    width: 550px;
+    height: 500px;
+    margin-right: 30px;
+    margin-top: 55px;
+    border: solid #000 1px;
+}
+
+/* LOGIN */
+
+.bodyLogin{
+    background-color: #383838;
+    background-image: url(../Assets/Imgs/Estádio_do_Morumbi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Manrope';
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.containerLogin{
+    width: 400px;
+    height: 425px;
+    background-color: #8F8F8F;
+    border-radius: 20px;
+    border: solid #FFF 2px;
+}
+
+.btnLogin{
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    border: solid #FFF 2px;
+    background-color: #383838;
+    font-family: 'Manrope';
+    font-weight: 500;
+    font-size: 17px;
+    color: #FFF;
+    margin-left: 135px;
+}
+
+.btnLogin:hover{
+    background-color:#838383;
+    color:#000;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-color: #000;
+}
+
+.inputLoginNome{
+    width: 250px;
+    height: 30px;
+    border-radius: 18px;
+    border: solid #FFF 2px;
+    background-color: #383838;
+    font-family: 'Manrope';
+    font-weight: 500;
+    color: #FFF;
+    padding: 4px;
+    text-align: center;
+    margin-left: 65px;
+}
+
+.inputLoginEmail{
+    width: 250px;
+    height: 30px;
+    border-radius: 18px;
+    border: solid #FFF 2px;
+    background-color: #383838;
+    font-family: 'Manrope';
+    font-weight: 500;
+    color: #FFF;
+    padding: 4px;
+    text-align: center;
+    margin-left: 65px;
+}
+
+.inputLoginSenha{
+    width: 250px;
+    height: 30px;
+    border-radius: 18px;
+    border: solid #FFF 2px;
+    background-color: #383838;
+    font-family: 'Manrope';
+    font-weight: 500;
+    color: #FFF;
+    padding: 4px;
+    text-align: center;
+    margin-left: 65px;
+}
+
+.inputLoginConfirmarSenha{
+    width: 250px;
+    height: 30px;
+    border-radius: 18px;
+    border: solid #FFF 2px;
+    background-color: #383838;
+    font-family: 'Manrope';
+    font-weight: 500;
+    color: #FFF;
+    padding: 4px;
+    text-align: center;
+    margin-left: 65px;
+}
+
+.inputErro{
+    width: 250px;
+    height: 30px;
+    border-radius: 18px;
+    border: solid #7E0101 2px;
+    background-color: #ff3737ce;
+    font-family: 'Manrope';
+    font-weight: 500;
+    color: #000000;
+    padding: 4px;
+    text-align: center;
+    margin-left: 65px;
+}
+
+.inputLogin:hover{
+    box-shadow: 0px 3px 3px 0px #000;
+}
+
+.tituloLogin{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.subtituloLoginNome{
+    font-size: 23px;
+    font-weight: 300;
+    margin-left: 67px
+}
+
+.subtituloLoginEmail{
+    font-size: 23px;
+    font-weight: 300;
+    margin-left: 67px
+}
+
+.subtituloLoginSenha{
+    font-size: 23px;
+    font-weight: 300;
+    margin-left: 67px
+}
+
+.subtituloLoginConfirmarSenha{
+    font-size: 23px;
+    font-weight: 300;
+    margin-left: 67px
+}
+
+.subtituloLoginErro{
+    font-size: 23px;
+    font-weight: 300;
+    margin-left: 67px;
+    color: #000;
+}
+
+.textoLimpo{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.textoLimpo:hover{
+    color: #000;
+}
+
+/* CADASTRO */
+
+.containerCadastro{
+    width: 800px;
+    height: 530px;
+    background-color: #8F8F8F;
+    border-radius: 20px;
+    border: solid white 2px;
+}
+
+.subtituloCadastro{
+    display: flex;
+    flex-direction: row;
+}
+
+.nomeEmailCadastro{
+    display: flex;
+    justify-content: space-around;
+    width: 730px;
+}
+
+.senhaCadastro{
+    display: flex;
+    justify-content: space-around;
+    width: 730px;
+}
+
+.btnCadastro{
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    border: solid #FFF 2px;
+    background-color:#383838;
+    font-family: 'Manrope';
+    font-weight: 500;
+    font-size: 17px;
+    color: #FFF;
+    margin-left: 335px;
+}
+
+.btnCadastro:hover{
+    background-color: #838383;
+    color: #000;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-weight: 520;
+    border-color: #000;
+}
+
+.jaTemConta{
+    text-align: center;
+    font-size: 17px;
+}
+
+.cliqueAqui{
+    color: #000;
+    text-decoration: none;
+    font-weight: 550;
+}
+
+.cliqueAqui:hover{
+    text-decoration: underline;
+    transition: all 0.4s;
+    font-size: 18px;
+}
+
+.subtituloNome{
+    margin-left: 23px;
+}
+
+.subtituloEmail{
+    margin-left: 235px;
+}
+
+.subtituloSenha{
+    margin-left: 23px;
+}
+
+.subtituloConfirmar{
+    margin-left: 235px;
+}
+
+/* HISTORIAS */
+
+.containerHistorias{
+    width: auto;
+    height: 500px;
+}
+
+.navBarHistorias{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #8F8F8F;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.navBarIdolos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color:#FFF;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #8F8F8F;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.navBarHistoriasTexto{
+    text-decoration: none;
+    color:#FFF;
+    font-weight: 500;
+}
+
+.navBarHistoriasTexto:hover{
+    text-decoration: underline;
+    transition: all 0.6s;
+    text-decoration-thickness: 0.1em;
+}
+
+.tituloNavbar{
+    color:#FF3737;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.historiasSP{
+    width: 1223px;
+    height: 560px;
+    margin-left: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tituloHistorias{
+    color: #FF3737;
+    font-size: 40px;
+    font-weight: 600; 
+}
+
+.textoHistorias{
+    width: 500px;
+    height: 500px;
+    margin: 30;
+    color: #000;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.imagemHistorias{
+    width: 600px;
+    height: 500px;
+    margin-right: 30px;
+}
+
+.imagemFundacao{
+    width: 600px;
+    height: 400px;
+    margin-right: 20px;
+    margin-top: 60px;
+    border: solid #000 1px;
+}
+
+.imagemConstrucao{
+    width: 520px;
+    height: 370px;
+    margin-top: 20px;
+    margin-left: 30px;
+    border: solid #000 1px;
+}
+
+.imagemTeleSantana{
+    width: 450px;
+    height: 550px;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-top: 90px;
+    border: solid #000 1px;
+}
+
+.imagemMundial{
+    width: 590px;
+    height: 420px;
+    margin-left: 20px;
+    margin-top: 110px;
+    border: solid #000 1px;
+}
+
+.imagemTriBR{
+    width: 600px;
+    height: 430px;
+    margin-top: 115px;
+    margin-left: 20px;
+    border: solid #000 1px;
+}
+
+.imagemRenascimento{
+    width: 630px;
+    height: 400px;
+    margin-top: 125px;
+    margin-left: 20px;
+    border: solid #000 1px;
+}
+
+.imagemChulapa{
+    width: 630px;
+    height: 400px;
+    margin-top: 70px;
+    border: solid #000 1px;
+}
+
+.imagemRai{
+    width: 600px;
+    height: 500px;
+    margin-top: 100px;
+    border: solid #000 1px;
+}
+
+.imagemCeni{
+    width: 630px;
+    height: 500px;
+    margin-right: 30px;
+    margin-top: 110px;
+    border: solid #000 1px;
+}
+
+.imagemLugano{
+    width: 600px;
+    height: 500px;
+    margin-top: 75px;
+    border: solid #000 1px;
+}
+
+.imagemHernanes{
+    width: 650px;
+    height: 470px;
+    margin-right: 30px;
+    margin-top: 100px;
+    border: solid #000 1px;
+}
+
+.imagemLuciano{
+    width: 470px;
+    height: 470px;
+    margin-left: 40px;
+    margin-top: 80px;
+    border: solid #000 1px;
+}
+
+/* FOOTER */
+
+.footer{
+    width: 1366px;
+    height: 350px;
+    background-color: #D3D3D3;
+    margin-bottom: 0;
+    border-top: solid #000 1px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fotoFooter{
+    width: 150px;
+    height: 200px;
+    margin-top: 23px;
+}
+
+.redesSociais{
+    width: 300px;
+    height: 200px;
+    margin-left: 130px;
+    color: #FF3737;
+}
+
+.tituloFooter{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.nomeFooter{
+    font-size: 20px;
+    color:#000;
+    text-decoration: none;
+}
+
+.nomeFooterLink{
+    width: 20px;
+    font-size: 20px;
+    color:#000;
+    text-decoration: none;
+}
+
+.nomeFooterLink:hover{
+    width: 20px;
+    text-decoration: underline;
+    transition: all 0.6s;
+    cursor: pointer;
+    text-decoration-thickness: 0.1em;
+}
+
+.contatoFooter{
+    width: 300px;
+    height: 200px;
+    color:#FF3737;
+}
+
+.navegacao{
+    width: 50px;
+    height: 200px;
+    margin-right: 250px;
+    color: #FF3737;
+}

@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope';
+}
+
+button{
+    cursor: pointer;
+}
+
+body{
+    background-image: url(../Assets/Imgs/torcida.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerQuiz{
+    background-color: #121214;
+    width: 450px;
+    height: 150px;
+    max-width: 800px;
+    
+    border: 2px solid #A10101;
+    border-radius: 6px;
+    padding: 16px;
+    box-shadow: 0 0 2px 2px #A10101;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerQuizMaior{
+    background-color: #121214;
+    width: 90%;
+    max-width: 850px;
+    height: 400px;
+    padding: 20px;
+    
+    border: 2px solid #A10101;
+    border-radius: 6px;
+    padding: 16px;
+    box-shadow: 0 0 2px 2px #A10101;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionsContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.question{
+    font-size: 25px;
+    font-weight: 450;
+    text-align: center;
+}
+
+.answersContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.nextQuestion{
+    margin-top: 32px;
+}
+
+.button{
+    background-color: #FFF;
+    color: #A10101;
+    font-size: 16px;
+    font-weight: 650;
+    border: solid #A10101 3px;
+    border-radius: 6px;
+    height: 48px;
+    padding: 0 32px;
+    transition: filter 0.2s;
+}
+
+.button:not(:disabled):hover{
+    filter: brightness(0.8);
+}
+
+.linkHome{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 17px;
+    text-align: center;
+}
+
+.linkHome:hover{
+    text-decoration: underline;
+    transition: all 0.6s;
+}
+
+.answer:disabled{
+    cursor: not-allowed;
+}
+
+.finalMessage{
+    font-size: 20px;
+    text-align: center;
+}
+
+.finalMessage span {
+    display: block;
+    margin-top: 8px;
+}
+
+.hide{
+    display: none;
+}
+
+.correct{
+    background-color: #049B48;
+    border: 0;
+    color: #FFF;
+}
+
+.incorrect{
+    background-color: #A10101;
+    color: #FFF;
+}
