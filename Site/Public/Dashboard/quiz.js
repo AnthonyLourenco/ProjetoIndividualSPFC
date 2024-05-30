@@ -217,8 +217,8 @@ const questions = [
         question: "Quantos estrangeiros o São Paulo tem atualmente no elenco ?",
         answers: [
             { text: "6", corretc: false },
-            { text: "9", correct: true },
-            { text: "8", correct: false },
+            { text: "9", correct: false },
+            { text: "8", correct: true },
             { text: "7", correct: false }
         ]
     },
