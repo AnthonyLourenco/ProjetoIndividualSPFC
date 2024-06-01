@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope';
+    background-color: #ECEBE7;
+}
+
+.containerDashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.containerRanking {
+    height: 600px;
+    width: 400px;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.navBar {
+    width: 330px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #A1A19D;
+    border-radius: 25px;
+    border: solid 1px #000;
+}
+
+.linkHome {
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+}
+
+.linkHome:hover {
+    text-decoration: underline;
+    transition: all 0.5s;
+    font-size: 27px;
+}
+
+.linkQuiz {
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+}
+
+.linkQuiz:hover {
+    text-decoration: underline;
+    transition: all 0.5s;
+    font-size: 27px;
+}
+
+.ranking {
+    background-color: #A1A19D;
+    height: 600px;
+    width: 350px;
+    margin-top: 50px;
+    border-radius: 25px;
+    border: solid 1px #000;
+}
+
+.tituloRanking {
+    font-size: 32px;
+    margin-left: 20px;
+}
+
+.posicao {
+    font-size: 25px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.nome {
+    font-size: 25px;
+}
+
+.containerIndicadores {
+    height: 610px;
+    width: 320px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.totalCadastrados {
+    width: 250px;
+    height: 130px;
+    background-color: #A1A19D;
+    border: solid 1px #000;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.titloCadastrados {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.numeroCadastrados {
+    font-size: 20px;
+}
+
+.totalJogadoresMes {
+    width: 250px;
+    height: 130px;
+    background-color: #A1A19D;
+    border: solid 1px #000;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.tituloJogadores {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.numeroMes {
+    font-size: 20px;
+}
+
+.melhorPontuacaoDia {
+    width: 250px;
+    height: 130px;
+    background-color: #A1A19D;
+    border: solid 1px #000;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.tituloMelhor {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.numeroMelhorDia {
+    font-size: 20px;
+}
+
+.piorPontuacaoDia {
+    width: 250px;
+    height: 130px;
+    background-color: #A1A19D;
+    border: solid 1px #000;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.tituloPior {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.numeroPiorDia {
+    font-size: 20px;
+}
+    
+
+.containerGrafico  {
+    height: 545px;
+    width: 500px;
+    margin-top: 10px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloGrafico {
+    text-align: center;
+    font-size: 25px;
+    background-color: #A1A19D;
+    border: solid 1px #000;
+    border-radius: 20px;
+}

@@ -4,6 +4,7 @@ const answersContainer = document.querySelector(".answersContainer")
 const questionText = document.querySelector(".question")
 const nextQuestionButton = document.querySelector(".nextQuestion")
 const linkHome = document.querySelector(".linkHome")
+const linkDashboard = document.querySelector(".linkDashboard")
 const containerQuiz = document.querySelector(".containerQuiz")
 
 
@@ -19,6 +20,7 @@ function startGame(){
     startGameButton.classList.add("hide")
     questionsContainer.classList.remove("hide")
     linkHome.classList.add("hide")
+    linkDashboard.classList.add("hide")
     containerQuiz.classList.add("containerQuizMaior")
     displayNextQuestion()
 }

@@ -23,7 +23,7 @@ body{
 
 .containerQuiz{
     background-color: #121214;
-    width: 450px;
+    width: 400px;
     height: 150px;
     max-width: 800px;
     
@@ -105,7 +105,19 @@ body{
     text-align: center;
 }
 
+.linkDashboard{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 17px;
+    text-align: center;
+}
+
 .linkHome:hover{
+    text-decoration: underline;
+    transition: all 0.6s;
+}
+
+.linkDashboard:hover{
     text-decoration: underline;
     transition: all 0.6s;
 }

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>São Paulo | Dashboard</title>
+    <link rel="stylesheet" href="../css/styleDashboard.css">
+    <link rel="icon" sizes="56X56" href="../Assets/Imgs/iconSPFC.png">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="containerDashboard">
+        <div class="containerRanking">
+            <div class="navBar">
+                <a href="../index.html" class="linkHome">
+                    Home
+                </a>
+                <a href="indexQuiz.html" class="linkQuiz">
+                    Quiz
+                </a>
+        </div>
+            <br>
+            <div class="ranking">
+                <p class="tituloRanking">Ranking de acertos</p>
+                <br>
+                <span class="posicao">1º</span> <span class="nome">Anthony</span> &nbsp;&nbsp; <span class="acertos">20/20</span>
+                <br>
+                <span class="posicao">2º</span> <span class="nome">Lucas</span> &nbsp;&nbsp; <span class="acertos">17/20</span>
+                <br>
+                <span class="posicao">3º</span> <span class="nome">Jader</span> &nbsp;&nbsp; <span class="acertos">16/20</span>
+                <br>
+                <span class="posicao">4º</span> <span class="nome">Marcelo</span> &nbsp;&nbsp; <span class="acertos">15/20</span>
+                <br>
+                <span class="posicao">5º</span> <span class="nome">Gabriel</span> &nbsp;&nbsp; <span class="acertos">12/20</span>
+                <br>
+                <span class="posicao">6º</span> <span class="nome">Mauricio</span> &nbsp;&nbsp; <span class="acertos">10/20</span>
+                <br>
+                <span class="posicao">7º</span> <span class="nome">Cadu</span> &nbsp;&nbsp; <span class="acertos">7/20</span>
+                <br>
+                <span class="posicao">8º</span> <span class="nome">Alexandre</span> &nbsp;&nbsp; <span class="acertos">3/20</span>
+                <br>
+                <span class="posicao">9º</span> <span class="nome">Arthur</span> &nbsp;&nbsp; <span class="acertos">1/20</span>
+                <br>
+                <span class="posicao">10º</span> <span class="nome">Nelia</span> &nbsp;&nbsp; <span class="acertos">0/20</span>
+            </div>
+    </div>
+        <div class="containerIndicadores">
+            <div class="totalCadastrados">
+                <p class="titloCadastrados">Contas cadastradas</p>
+                <p class="numeroCadastrados">97</p>
+            </div>
+            <div class="totalJogadoresMes">
+                <p class="tituloJogadores">Jogadores no mês</p>
+                <p class="numeroMes">15</p>
+            </div>
+            <div class="melhorPontuacaoDia">
+                <p class="tituloMelhor">Melhor pontuação do dia</p>
+                <p class="numeroMelhorDia">17/20</p>
+            </div>
+            <div class="piorPontuacaoDia">
+                <p class="tituloPior">Pior pontuação do dia</p>
+                <p class="numeroPiorDia">5/20</p>
+            </div>
+        </div>
+        <div class="containerGrafico">
+            <p class="tituloGrafico">Distribuição de Pontuações</p>
+            <canvas id="graficoDificuldade" class="grafico"></canvas>
+            <p class="tituloGrafico">Usuários no site</p>
+            <canvas id="graficoUsuariosMes" class="grafico"></canvas>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // Dados do gráfico de dificuldade
+    var dificuldadeData = {
+      labels: ['Perguntas 1-5', 'Perguntas 6-10', 'Perguntas 11-15', 'Perguntas 16-20'],
+      datasets: [{
+        label: 'Número de acertos',
+        data: [30, 16, 8, 3],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    var dificuldadeOptions = {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    };
+
+    var usuariosMesData = {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      datasets: [{
+        label: 'Número de usuários',
+        data: [30, 40, 55, 40, 20, 20, 40, 45, 40, 25, 30, 20],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    var usuariosMesOptions = {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    };
+
+    var ctxDificuldade = document.getElementById('graficoDificuldade').getContext('2d');
+    var graficoDificuldade = new Chart(ctxDificuldade, {
+      type: 'bar',
+      data: dificuldadeData,
+      options: dificuldadeOptions
+    });
+
+    var ctxUsuariosMes = document.getElementById('graficoUsuariosMes').getContext('2d');
+    var graficoUsuariosMes = new Chart(ctxUsuariosMes, {
+      type: 'line',
+      data: usuariosMesData,
+      options: usuariosMesOptions
+    });
+  </script>
+
