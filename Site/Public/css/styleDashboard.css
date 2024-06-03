@@ -182,3 +182,9 @@ body {
     border: solid 1px #000;
     border-radius: 20px;
 }
+
+.imgDash {
+    width: 30px;
+    height: 40px;
+
+}
