@@ -131,6 +131,27 @@ header{
     cursor: pointer;
 }
 
+.btnJogarQuiz{
+    background-color: #FF3737;
+    color: #FFF;
+    width: 170px;
+    height: 50px;
+    border: solid 1px #7E0101;
+    border-radius: 30px;
+    font-size: 20px;
+    font-style: 'Manrope';
+    text-align: center;
+    margin-left: 600px;
+}
+
+.btnJogarQuiz:hover{
+    cursor: pointer;
+    background-color: #7E0101;
+    border: solid 1px #FF3737;
+    color: #FFF;
+    transition: all 0.4s;
+}
+
 .loginIndex{
     text-decoration: none;
     color: #FFF;
@@ -162,7 +183,7 @@ header{
 }
 
 .bannerTexto{
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 350;
     color: #FFF;
     text-shadow: 2px 2px 3px #000;
