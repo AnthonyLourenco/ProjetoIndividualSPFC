@@ -116,40 +116,7 @@ function finishGame(){
     Refazer teste
     </button>
     `
-    guardarPontuacao(totalCorrect);
-
 }
-
-function guardarPontuacao (pontuacaoQuiz){
-
-    if(pontuacaoQuiz == null){
-        console.log("Nenhuma informação pode ser nula.")
-        return
-    }
-
-    fetch("/quiz/cadastrarPontuacao", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          // crie um atributo que recebe o valor recuperado aqui
-          // Agora vá para o arquivo routes/usuario.js
-          pontucaoTotal: pontuacaoQuiz,
-        }),
-      }).then(function (pontuacao) {
-        console.log("resposta: ", pontuacaoQuiz);
-
-        if (pontuacaoQuiz.ok) {
-            console.log("Deu certo!")
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro da pontuacao!";
-        }
-      }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-}
-
 
 const questions = [
     {

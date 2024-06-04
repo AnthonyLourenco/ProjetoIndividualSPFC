@@ -88,31 +88,17 @@
     }
   }
 
-  // Função para atualizar o número de histórias
-  function updateHistoriasCount() {
-    fetch("/historia/contar")
-      .then((response) => response.json())
-      .then((data) => {
-        const historiasCountElement =
-          document.getElementById("historias-count");
-        historiasCountElement.textContent = data[0].totalHistorias;
-      })
-      .catch((error) =>
-        console.error("Erro ao buscar o número de histórias:", error)
-      );
-  }
-
-  function updateUsuariosCount() {
-    fetch("/usuarios/contar")
-      .then((response) => response.json())
-      .then((data) => {
-        const usuariosCountElement = document.getElementById("usuarios-count");
-        usuariosCountElement.textContent = data[0].totalUsuarios;
-      })
-      .catch((error) =>
-        console.error("Erro ao buscar o número de usuários:", error)
-      );
-  }
+  // function updateUsuariosCount() {
+  //   fetch("/usuarios/contar")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       const usuariosCountElement = document.getElementById("usuarios-count");
+  //       usuariosCountElement.textContent = data[0].totalUsuarios;
+  //     })
+  //     .catch((error) =>
+  //       console.error("Erro ao buscar o número de usuários:", error)
+  //     );
+  // }
 
   function updateTop5Pontuacao() {
     fetch("/medidas/top-5-pontuacao")
@@ -132,12 +118,11 @@
         const seriesData = data.map(item => item.ponto);
         const categories = data.map(item => item.usuario);
 
-
         // BAR CHART 1
         const barChartOptions = {
           series: [
             {
-              data: seriesData,
+              data: [15, 20, 17, 7, 8, 9, 12, 20, 10, 5, 3],
               name: "Pontos",
             },
           ],
@@ -195,7 +180,7 @@
             theme: "dark",
           },
           xaxis: {
-            categories: categories,
+            categories: [],
             title: {
               style: {
                 color: "#f5f7ff",
@@ -246,130 +231,9 @@
       })
       .catch((error) => console.error("Erro ao buscar o top 5 de pontuação:", error));
   }
-
   // Chamar a função ao carregar a página
-  document.addEventListener("DOMContentLoaded", updateHistoriasCount);
-  document.addEventListener("DOMContentLoaded", updateUsuariosCount);
+  
+  // document.addEventListener("DOMContentLoaded", updateUsuariosCount);
   document.addEventListener("DOMContentLoaded", updateTop5Pontuacao);
-
-  // ---------- CHARTS ----------
-
-  // BAR CHART 2
-//   const barChartOptions2 = {
-//     series: [
-//       {
-//         data: [10, 8, 6, 4, 2],
-//         name: "Votos",
-//       },
-//     ],
-//     chart: {
-//       type: "bar",
-//       background: "transparent",
-//       height: 350,
-//       toolbar: {
-//         show: false,
-//       },
-//     },
-//     colors: ["#695c5a", "#695c5a", "#695c5a", "#695c5a", "#695c5a"],
-//     plotOptions: {
-//       bar: {
-//         distributed: true,
-//         borderRadius: 4,
-//         horizontal: false,
-//         columnWidth: "40%",
-//       },
-//     },
-//     dataLabels: {
-//       enabled: false,
-//     },
-//     fill: {
-//       opacity: 1,
-//     },
-//     grid: {
-//       borderColor: "#55596e",
-//       yaxis: {
-//         lines: {
-//           show: true,
-//         },
-//       },
-//       xaxis: {
-//         lines: {
-//           show: true,
-//         },
-//       },
-//     },
-//     legend: {
-//       labels: {
-//         colors: "#f5f7ff",
-//       },
-//       show: true,
-//       position: "top",
-//     },
-//     stroke: {
-//       colors: ["transparent"],
-//       show: true,
-//       width: 2,
-//     },
-//     tooltip: {
-//       shared: true,
-//       intersect: false,
-//       theme: "dark",
-//     },
-//     xaxis: {
-//       categories: [
-//         "História1",
-//         "História2",
-//         "História3",
-//         "História4",
-//         "História5",
-//       ],
-//       title: {
-//         style: {
-//           color: "#f5f7ff",
-//         },
-//       },
-//       axisBorder: {
-//         show: true,
-//         color: "#55596e",
-//       },
-//       axisTicks: {
-//         show: true,
-//         color: "#55596e",
-//       },
-//       labels: {
-//         style: {
-//           colors: "#f5f7ff",
-//         },
-//       },
-//     },
-//     yaxis: {
-//       title: {
-//         text: "Votos",
-//         style: {
-//           color: "#f5f7ff",
-//         },
-//       },
-//       axisBorder: {
-//         color: "#55596e",
-//         show: true,
-//       },
-//       axisTicks: {
-//         color: "#55596e",
-//         show: true,
-//       },
-//       labels: {
-//         style: {
-//           colors: "#f5f7ff",
-//         },
-//       },
-//     },
-//   };
-
-//   const barChart2 = new ApexCharts(
-//     document.querySelector("#bar-chart2"),
-//     barChartOptions2
-//   );
-//   barChart2.render();
-
 
 </script>
