@@ -1,0 +1,15 @@
+var database = require("../database/config");
+
+function buscarTop5Pontuacao() {
+    var instrucaoSql = `
+    SELECT pontuacao 
+    FROM historico
+    ORDER BY pontuacao DESC;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+module.exports = {
+    buscarTop5Pontuacao
+}

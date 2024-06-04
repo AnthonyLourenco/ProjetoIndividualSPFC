@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+  }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #ECEBE7;
+    color: #9e9ea4;
+  }
+  
+  
+  /* ---------- HEADER ---------- */
+
+   header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.header{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    background-color: #ECEBE7;
+    border-bottom: solid 1px #FF3737;
+}
+
+.navBar{
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    font-size: 23px;
+    font-weight: 570;
+}
+
+.imagemIndex{
+    width: 65px;
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.imagemIndex:hover{
+    cursor: pointer;
+}
+
+.home{
+    height: 20px;
+    color: #FF3737;
+}
+
+.linkHome{
+    text-decoration: none;
+}
+
+.home:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s;
+    color: #000;
+}
+
+.historias{
+    height: 20px;
+    color: #FF3737;
+}
+
+.linkHistorias{
+    text-decoration: none;
+}
+
+.historias:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s;
+    color: #000;
+}
+
+.contato{
+    height: 20px;
+    color: #FF3737;
+}
+
+.linkContato{
+    text-decoration: none;
+}
+
+.contato:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s;
+    color: #000;
+}
+
+.btnLoginIndex{
+    width: 160px;
+    height: 50px;
+    margin-right: 25px;
+    margin-top: 20px;
+    background-color: #FF3737;
+    border-color: #00000000;
+    border-radius: 30px;
+    font-size: 23px;
+    font-family: 'Manrope';
+    color: #FFF;
+}
+
+.btnLoginIndex:hover{
+    background-color: #7E0101;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.btnJogarQuiz{
+    background-color: #FF3737;
+    color: #FFF;
+    width: 170px;
+    height: 50px;
+    border: solid 1px #7E0101;
+    border-radius: 30px;
+    font-size: 20px;
+    font-style: 'Manrope';
+    text-align: center;
+    margin-left: 600px;
+}
+
+.btnJogarQuiz:hover{
+    cursor: pointer;
+    background-color: #7E0101;
+    border: solid 1px #FF3737;
+    color: #FFF;
+    transition: all 0.4s;
+}
+
+.loginIndex{
+    text-decoration: none;
+    color: #FFF;
+}
+  /* ---------- MAIN ---------- */
+  
+  .main-container {
+    margin-top: 100px;
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .main-title {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .tituloDashboard {
+    font-size: 35px;
+    color: #000;
+  }
+  
+  .main-cards {
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+    justify-content: space-around;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    border-radius: 5px;
+  }
+  
+  .card{
+    background-color: #7E0101;
+  }
+  
+  .card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-inner > .material-icons-outlined {
+    font-size: 45px;
+  }
+  
+  .charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 60px;
+  }
+  
+  .charts-card {
+    background-color: #7E0101;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    
+    width: 650px;
+    height: 550px;
+  }
+
+  .indicadores {
+    background-color: #7E0101;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    
+    width: 650px;
+    height: 550px;
+  }
+
+  .indicadoresContainer {
+    display: flex;
+    margin: 0;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+
+  .indicador {
+    background-color: #FF3737;
+    width: 250px;
+    height: 150px;
+  }
+  
+  .chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ---------- MEDIA QUERIES ---------- */
+  
+  /* Medium <= 992px */
+  
+  @media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        'header'
+        'main';
+    }
+  
+    #sidebar {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: inline;
+    }
+  
+    .sidebar-title > span {
+      display: inline;
+    }
+  }
+  
+  /* Small <= 768px */
+  
+  @media screen and (max-width: 768px) {
+    .main-cards {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+  
+    .charts {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+    }
+  }
+  
+  /* Extra Small <= 576px */
+  
+  @media screen and (max-width: 576px) {
+    .hedaer-left {
+      display: none;
+    }
+  }
+  
