@@ -166,7 +166,14 @@
 
   .tituloDashboard {
     font-size: 35px;
-    color: #000;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #7E0101;
+    border: solid 3px #000;
+    border-radius: 20px;
+    width: 250px;
+    height: 60px;
+    text-align: center;
   }
   
   .main-cards {
@@ -208,6 +215,8 @@
   
   .charts-card {
     background-color: #7E0101;
+    border: solid 3px #000;
+    border-radius: 25px;
     margin-bottom: 20px;
     padding: 25px;
     box-sizing: border-box;
@@ -221,6 +230,8 @@
 
   .indicadores {
     background-color: #7E0101;
+    border: solid 3px #000;
+    border-radius: 25px;
     margin-bottom: 20px;
     padding: 25px;
     box-sizing: border-box;
@@ -241,6 +252,8 @@
 
   .indicador {
     background-color: #FF3737;
+    border: solid 1.5px #ECEBE7;
+    border-radius: 10px;
     width: 250px;
     height: 150px;
   }
