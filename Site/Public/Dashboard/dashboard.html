@@ -113,10 +113,12 @@
         }
 
         // Mapear os dados recebidos para as séries de dados e categorias
-        const seriesData = data.map(item => item.ponto);
-        const categories = data.map(item => item.usuario);
+        const seriesData = data.map(item => item.pontuacao);
+        const categories = data.map(item => item.nome);
 
         // BAR CHART 1
+
+        console.log("serial:" + seriesData)
         const barChartOptions = {
           series: [
             {

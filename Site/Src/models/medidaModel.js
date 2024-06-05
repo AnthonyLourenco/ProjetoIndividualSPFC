@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function buscarTop5Pontuacao() {
     var instrucaoSql = `
-    SELECT u.nome AS NomeUsuario, h.pontuacao AS Pontuacao
+    SELECT u.nome AS nome, h.pontuacao AS pontuacao
     FROM usuario u
     JOIN historico h ON u.idUsuario = h.fkUsuario ORDER BY pontuacao DESC
     `
