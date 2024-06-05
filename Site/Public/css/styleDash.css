@@ -104,44 +104,10 @@
     color: #000;
 }
 
-.btnLoginIndex{
-    width: 160px;
-    height: 50px;
-    margin-right: 25px;
-    margin-top: 20px;
-    background-color: #FF3737;
-    border-color: #00000000;
-    border-radius: 30px;
-    font-size: 23px;
-    font-family: 'Manrope';
-    color: #FFF;
-}
-
-.btnLoginIndex:hover{
-    background-color: #7E0101;
-    transition: all 0.4s;
-    cursor: pointer;
-}
-
-.btnJogarQuiz{
-    background-color: #FF3737;
-    color: #FFF;
-    width: 170px;
-    height: 50px;
-    border: solid 1px #7E0101;
-    border-radius: 30px;
-    font-size: 20px;
-    font-style: 'Manrope';
-    text-align: center;
-    margin-left: 600px;
-}
-
-.btnJogarQuiz:hover{
-    cursor: pointer;
-    background-color: #7E0101;
-    border: solid 1px #FF3737;
-    color: #FFF;
-    transition: all 0.4s;
+.nomeUsuarioDash {
+  color: #FF3737;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
 .loginIndex{

@@ -26,11 +26,9 @@
                     <span class="contato" id="contato">Contato</span>
                 </a>
             </div>
-            <a href="../cadastro.html" class="loginIndex">
-                <button class="btnLoginIndex">
-                    Login
-                </button>
-            </a>
+            <p class="nomeUsuarioDash">
+              Bem Vindo, <span id="b_usuario">Usuário</span> !
+            </p>
         </div>
     </header>
     <main class="main-container">
@@ -68,7 +66,7 @@
 </html>
 
 <script>
-
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
   // SIDEBAR TOGGLE
 
   let sidebarOpen = false;
