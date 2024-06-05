@@ -24,19 +24,21 @@ body{
 
 .containerNomeUsuario {
     margin: 0;
-    width: 250px;
+    width: 400px;
     height: 100px;
     background-color: #121214;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #A10101;
+    border-top: 4px solid #A10101;
+    border-left: 4px solid #A10101;
+    border-right: 4px solid #A10101;
     border-radius: 6px;
-    box-shadow: 0 0 2px 2px #A10101;
 }
 
 .nomeUsuarioQuiz {
     font-size: 20px;
+    font-weight: 600;
     color: #A10101;
 }
 
@@ -46,10 +48,11 @@ body{
     height: 150px;
     max-width: 800px;
     
-    border: 2px solid #A10101;
+    border-bottom: 4px solid #A10101;
+    border-left: 4px solid #A10101;
+    border-right: 4px solid #A10101;
     border-radius: 6px;
     padding: 16px;
-    box-shadow: 0 0 2px 2px #A10101;
     
     display: flex;
     flex-direction: column;
