@@ -95,18 +95,14 @@ function finishGame(){
 
     let message = ""
 
-    switch (true) {
-        case (performance >= 90):
-            message = "Excelente, você sabe tudo sobre o São Paulo"
-            break
-        case (performance >= 70):
-            message = "Muito Bem, você sabe muita coisa"
-            break
-        case (performance >= 50):
-            message = "Ok, mas pode melhorar"
-            break
-        default:
-            message = "Veja as histórias no site para melhorar sua pontuação"
+    if (performance >= 90) {
+        message = "Excelente, você sabe tudo sobre o São Paulo";
+    } else if (performance >= 70) {
+        message = "Muito Bem, você sabe muita coisa";
+    } else if (performance >= 50) {
+        message = "Ok, mas pode melhorar";
+    } else {
+        message = "Veja as histórias no site para melhorar sua pontuação";
     }
 
     questionsContainer.innerHTML = 
@@ -118,7 +114,7 @@ function finishGame(){
     </span>
     </p>
     <button onclick=window.location.reload() class="button">
-    Refazer teste
+    Refazer quiz
     </button>
     `
 

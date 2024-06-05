@@ -25,7 +25,7 @@ body{
 .containerNomeUsuario {
     margin: 0;
     width: 400px;
-    height: 100px;
+    height: 60px;
     background-color: #121214;
     display: flex;
     justify-content: center;
