@@ -22,9 +22,17 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
-function registrarAcertos(usuario, acertos) {
+function contarUsuarios() {
     var instrucaoSql = `
-        INSERT INTO historico (fkUsuario, fkQuiz, pontuacao, dtHora) VALUES ('${usuario}', '1, ' ${acertos}, NOW());
+        SELECT COUNT(*) AS totalUsuarios FROM usuario;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function registrarAcertos(idUsuario, acertos) {
+    var instrucaoSql = `
+        INSERT INTO historico (idHistorico, fkUsuario, fkQuiz, pontuacao, dtHora) VALUES (default, '${idUsuario}', 1, ${acertos}, NOW());
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -33,5 +41,6 @@ function registrarAcertos(usuario, acertos) {
 module.exports = {
     autenticar,
     cadastrar,
+    contarUsuarios,
     registrarAcertos
 };

@@ -85,6 +85,18 @@ function cadastrar(req, res) {
     }
 }
 
+function contarUsuarios(req, res) {
+    usuarioModel.contarUsuarios()
+        .then((resultado) => {
+            res.status(200).json(resultado);
+        })
+        .catch((erro) => {
+            console.log(erro);
+            console.log("Houve um erro ao contar os usuários: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 function registrarAcertos(req, res) {
     var usuario = req.body.usuarioServer;
     var acertos = req.body.acertosServer;
@@ -109,5 +121,6 @@ function registrarAcertos(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
+    contarUsuarios,
     registrarAcertos
 }

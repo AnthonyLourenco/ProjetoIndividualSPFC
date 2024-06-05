@@ -27,7 +27,9 @@
                 </a>
             </div>
             <p class="nomeUsuarioDash">
-              Bem Vindo, <span id="b_usuario">Usuário</span> !
+              Bem Vindo, 
+              <br>
+              <span id="b_usuario">Usuário</span> !
             </p>
         </div>
     </header>
@@ -44,7 +46,10 @@
           <h2 class="chart-title">Indicadores</h2>
           <br><br><br>
           <div class="indicadoresContainer">
-            <div class="indicador"></div>
+            <div class="indicador">
+              <p>Contas Cadastradas</p>
+              <p id="usuarios-count">0</p>
+            </div>
             <div class="indicador"></div>
           </div>
           <br><br><br>
@@ -86,17 +91,17 @@
     }
   }
 
-  // function updateUsuariosCount() {
-  //   fetch("/usuarios/contar")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       const usuariosCountElement = document.getElementById("usuarios-count");
-  //       usuariosCountElement.textContent = data[0].totalUsuarios;
-  //     })
-  //     .catch((error) =>
-  //       console.error("Erro ao buscar o número de usuários:", error)
-  //     );
-  // }
+  function updateUsuariosCount() {
+    fetch("/usuarios/contar")
+      .then((response) => response.json())
+      .then((data) => {
+        const usuariosCountElement = document.getElementById("usuarios-count");
+        usuariosCountElement.textContent = data[0].totalUsuarios;
+      })
+      .catch((error) =>
+        console.error("Erro ao buscar o número de usuários:", error)
+      );
+  }
 
   function updateTop5Pontuacao() {
     fetch("/medidas/top-5-pontuacao")
@@ -233,7 +238,7 @@
   }
   // Chamar a função ao carregar a página
   
-  // document.addEventListener("DOMContentLoaded", updateUsuariosCount);
+  document.addEventListener("DOMContentLoaded", updateUsuariosCount);
   document.addEventListener("DOMContentLoaded", updateTop5Pontuacao);
 
 </script>
