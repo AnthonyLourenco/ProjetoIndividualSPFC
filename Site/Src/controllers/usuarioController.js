@@ -85,7 +85,29 @@ function cadastrar(req, res) {
     }
 }
 
+function registrarAcertos(req, res) {
+    var usuario = req.body.usuarioServer;
+    var acertos = req.body.acertosServer;
+
+    if (usuario == undefined) {
+        res.status(400).send("O nome do usuário está undefined!");
+    } else if (acertos == undefined) {
+        res.status(400).send("O número de acertos está undefined!");
+    } else {
+        usuarioModel.registrarAcertos(usuario, acertos)
+            .then(function (resultado) {
+                res.json(resultado);
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao registrar os acertos! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    registrarAcertos
 }

@@ -116,7 +116,35 @@ function finishGame(){
     Refazer teste
     </button>
     `
+
+    const username = sessionStorage.NOME_USUARIO;
+    if (username) {
+      fetch("/usuarios/registrarAcertos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          usuarioServer: username,
+          acertosServer: totalCorrect,
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            console.error("Erro ao registrar os acertos");
+          } else {
+            console.log("Acertos registrados com sucesso");
+          }
+        })
+        .catch((error) => {
+          console.error("Erro ao fazer a requisição", error);
+        });
+    } else {
+      console.error("Nome de usuário não encontrado");
+    }
 }
+
+
 
 const questions = [
     {

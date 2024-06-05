@@ -22,7 +22,16 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function registrarAcertos(usuario, acertos) {
+    var instrucaoSql = `
+        INSERT INTO historico (fkUsuario, fkQuiz, pontuacao, dtHora) VALUES ('${usuario}', '1, ' ${acertos}, NOW());
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    registrarAcertos
 };
