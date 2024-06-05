@@ -6,7 +6,10 @@ const nextQuestionButton = document.querySelector(".nextQuestion")
 const linkHome = document.querySelector(".linkHome")
 const linkDashboard = document.querySelector(".linkDashboard")
 const containerQuiz = document.querySelector(".containerQuiz")
+const containerNomeUsuario = document.querySelector(".containerNomeUsuario")
+const nomeUsuarioQuiz = document.querySelector(".nomeUsuarioQuiz")
 
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 startGameButton.addEventListener("click", startGame)
 nextQuestionButton.addEventListener("click", displayNextQuestion)
@@ -22,6 +25,8 @@ function startGame(){
     linkHome.classList.add("hide")
     linkDashboard.classList.add("hide")
     containerQuiz.classList.add("containerQuizMaior")
+    containerNomeUsuario.classList.add("hide")
+    nomeUsuarioQuiz.classList.add("hide")
     displayNextQuestion()
 }
 

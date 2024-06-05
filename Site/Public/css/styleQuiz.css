@@ -19,6 +19,25 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.containerNomeUsuario {
+    margin: 0;
+    width: 250px;
+    height: 100px;
+    background-color: #121214;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #A10101;
+    border-radius: 6px;
+    box-shadow: 0 0 2px 2px #A10101;
+}
+
+.nomeUsuarioQuiz {
+    font-size: 20px;
+    color: #A10101;
 }
 
 .containerQuiz{
