@@ -116,6 +116,9 @@ function finishGame(){
     <button onclick=window.location.reload() class="button">
     Refazer quiz
     </button>
+    <a href="./dashboard.html" class="linkDashboard">
+    Ranking
+    </a>
     `
 
     const username = sessionStorage.NOME_USUARIO;
