@@ -6,54 +6,44 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+create database projetoIndividual;
+use projetoIndividual;
 
-USE aquatech;
-
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14)
+create table usuario (
+idUsuario int primary key auto_increment,
+nome varchar(45) unique,
+email varchar(150) unique not null,
+senha varchar(45) not null
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+create table quiz (
+idQuiz int primary key auto_increment,
+nome varchar(45) unique,
+qtdPerguntas varchar(45) not null
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+create table historico (
+idHistorico int auto_increment,
+fkUsuario varchar(45),
+fkQuiz int,
+pontuacao int not null,
+dtHora datetime not null,
+constraint pkComposta primary key (idHistorico, fkUsuario, fkQuiz),
+constraint fkUsuarioHistorico foreign key (fkUsuario) references usuario (nome),
+constraint fkQuizHistorico foreign key (fkQuiz) references quiz (idQuiz)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
-);
+INSERT INTO quiz (nome, qtdPerguntas) VALUES
+('Quiz São Paulo F.C.', '20');
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
+select * from usuario;
+select * from quiz;
+select * from historico;
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
+SELECT pontuacao 
+    FROM historico
+    ORDER BY pontuacao DESC;
 
-insert into empresa (razao_social, cnpj) values ('Empresa 1', '00000000000000');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
+SELECT u.nome AS nome, h.pontuacao AS pontuacao
+FROM usuario u
+JOIN historico h ON u.nome = h.fkUsuario ORDER BY h.pontuacao DESC;
