@@ -12,7 +12,7 @@ use projetoIndividual;
 create table usuario (
 idUsuario int primary key auto_increment,
 nome varchar(45) unique,
-email varchar(150) unique not null,
+email varchar(255) unique not null,
 senha varchar(45) not null
 );
 
