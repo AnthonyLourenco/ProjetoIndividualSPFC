@@ -35,36 +35,25 @@
     </header>
     <main class="main-container">
       <div class="main-title">
-        <h2 class="tituloDashboard">RANKING</h2>
+        <h2 class="tituloDashboard">RANKING DO QUIZ</h2>
       </div>
       <div class="charts">
         <div class="charts-card">
-          <h2 class="chart-title">Melhores Pontuações</h2>
+          <h2 class="chart-title">Ranking das Pontuações</h2>
           <div id="bar-chart"></div>
         </div>
         <div class="indicadores">
-          <h2 class="chart-title">Indicadores</h2>
-          <br><br><br>
           <div class="indicadoresContainer">
             <div class="indicador">
               <p>Contas Cadastradas</p>
               <p id="usuarios-count">0</p>
             </div>
-            <div class="indicador"></div>
-          </div>
-          <br><br><br>
-          <div class="indicadoresContainer">
-            <div class="indicador"></div>
-            <div class="indicador"></div>
           </div>
         </div>
       </div>
     </main>
-    <!-- End Main -->
   </div>
 
-  <!-- Scripts -->
-  <!-- ApexCharts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
 </body>
 
@@ -72,24 +61,24 @@
 
 <script>
   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-  // SIDEBAR TOGGLE
 
-  let sidebarOpen = false;
-  const sidebar = document.getElementById("sidebar");
-
-  function openSidebar() {
-    if (!sidebarOpen) {
-      sidebar.classList.add("sidebar-responsive");
-      sidebarOpen = true;
+  function scrollToSection(to) {
+        window.scrollTo(0, to)
     }
-  }
 
-  function closeSidebar() {
-    if (sidebarOpen) {
-      sidebar.classList.remove("sidebar-responsive");
-      sidebarOpen = false;
+    let header = document.getElementById('header')
+    let limite = 121
+    let corOriginal = true
+
+    window.addEventListener('scroll', function() {
+    if (window.scrollY > limite && corOriginal) {
+    header.classList.add('headerColor')
+    corOriginal = false
+    } else if (window.scrollY <= limite && !corOriginal) {
+    header.classList.remove('headerColor')
+    corOriginal = true
     }
-  }
+});
 
   function updateUsuariosCount() {
     fetch("/usuarios/contar")
@@ -117,10 +106,6 @@
           throw new Error("Dados recebidos não são um array");
         }
 
-        // Mapear os dados recebidos para as séries de dados e categorias
-        // const seriesData = data.map(item => item.pontuacao);
-        // const categories = data.map(item => item.nome);
-
         const seriesData = [];
         const categories = [];
 
@@ -131,8 +116,6 @@
           seriesData.push(data[i].pontuacao);
           categories.push(data[i].nome);
       }
-
-        // BAR CHART 1
 
         console.log("serial:" + seriesData)
         const barChartOptions = {
@@ -247,7 +230,6 @@
       })
       .catch((error) => console.error("Erro ao buscar o top 5 de pontuação:", error));
   }
-  // Chamar a função ao carregar a página
   
   document.addEventListener("DOMContentLoaded", updateUsuariosCount);
   document.addEventListener("DOMContentLoaded", updateTop5Pontuacao);
