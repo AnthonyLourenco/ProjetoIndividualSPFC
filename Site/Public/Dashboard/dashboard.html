@@ -118,8 +118,19 @@
         }
 
         // Mapear os dados recebidos para as séries de dados e categorias
-        const seriesData = data.map(item => item.pontuacao);
-        const categories = data.map(item => item.nome);
+        // const seriesData = data.map(item => item.pontuacao);
+        // const categories = data.map(item => item.nome);
+
+        const seriesData = [];
+        const categories = [];
+
+        for (
+          let i = 0; 
+          i < data.length; 
+          i++) {
+          seriesData.push(data[i].pontuacao);
+          categories.push(data[i].nome);
+      }
 
         // BAR CHART 1
 
