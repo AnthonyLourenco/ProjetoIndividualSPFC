@@ -9,49 +9,49 @@
   <link rel="icon" href="../Assets/Imgs/iconSPFC.png" />
   <link rel="stylesheet" href="../css/styleDash.css" />
 </head>
+
 <body>
-    <header>
-        <div class="header" id="header">
-            <span class="imagemIndex">
-                <img src="../Assets/Imgs/São_Paulo_Futebol_Clube.png" class="imagemIndex" onclick="scrollToSection(0)">
-            </span>
-            <div class="navBar">
-                <a href="../index.html#home" class="linkHome">
-                    <span class="home" id="home">Sobre</span>
-                </a>
-                <a href="../index.html#home" class="linkHistorias">
-                    <span class="historias" id="historias">Histórias</span>
-                </a>
-                <a href="../index.html#footer" class="linkContato">
-                    <span class="contato" id="contato">Contato</span>
-                </a>
-            </div>
-            <p class="nomeUsuarioDash">
-              Bem Vindo, 
-              <br>
-              <span id="b_usuario">Usuário</span> !
-            </p>
-        </div>
-    </header>
-    <main class="main-container">
-      <div class="main-title">
-        <h2 class="tituloDashboard">RANKING DO QUIZ</h2>
+  <header>
+    <div class="header" id="header">
+      <span class="imagemIndex">
+        <img src="../Assets/Imgs/São_Paulo_Futebol_Clube.png" class="imagemIndex" onclick="scrollToSection(0)">
+      </span>
+      <div class="navBar">
+        <a href="../index.html#home" class="linkHome">
+          <span class="home" id="home">Sobre</span>
+        </a>
+        <a href="../index.html#home" class="linkHistorias">
+          <span class="historias" id="historias">Histórias</span>
+        </a>
+        <a href="../index.html#footer" class="linkContato">
+          <span class="contato" id="contato">Contato</span>
+        </a>
       </div>
-      <div class="charts">
-        <div class="charts-card">
-          <h2 class="chart-title">Ranking das Pontuações</h2>
-          <div id="bar-chart"></div>
-        </div>
-        <div class="indicadores">
-          <div class="indicadoresContainer">
-            <div class="indicador">
-              <p>Contas Cadastradas</p>
-              <p id="usuarios-count">0</p>
-            </div>
+      <p class="nomeUsuarioDash">
+        Bem Vindo,
+        <br>
+        <span id="b_usuario">Usuário</span> !
+      </p>
+    </div>
+  </header>
+  <main class="main-container">
+    <div class="main-title">
+      <h2 class="tituloDashboard">RANKING DO QUIZ</h2>
+    </div>
+    <div class="charts">
+      <div class="charts-card">
+        <h2 class="chart-title">Ranking das Pontuações</h2>
+        <div id="bar-chart"></div>
+      </div>
+      <div class="indicadores">
+        <div class="indicadoresContainer">
+          <div class="indicador">
+            <p>Contas Cadastradas</p>
+            <p id="usuarios-count">0</p>
           </div>
         </div>
       </div>
-    </main>
+  </main>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
@@ -63,22 +63,22 @@
   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
   function scrollToSection(to) {
-        window.scrollTo(0, to)
-    }
+    window.scrollTo(0, to)
+  }
 
-    let header = document.getElementById('header')
-    let limite = 121
-    let corOriginal = true
+  let header = document.getElementById('header')
+  let limite = 121
+  let corOriginal = true
 
-    window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     if (window.scrollY > limite && corOriginal) {
-    header.classList.add('headerColor')
-    corOriginal = false
+      header.classList.add('headerColor')
+      corOriginal = false
     } else if (window.scrollY <= limite && !corOriginal) {
-    header.classList.remove('headerColor')
-    corOriginal = true
+      header.classList.remove('headerColor')
+      corOriginal = true
     }
-});
+  });
 
   function updateUsuariosCount() {
     fetch("/usuarios/contar")
@@ -110,12 +110,12 @@
         const categories = [];
 
         for (
-          let i = 0; 
-          i < data.length; 
+          let i = 0;
+          i < data.length;
           i++) {
           seriesData.push(data[i].pontuacao);
           categories.push(data[i].nome);
-      }
+        }
 
         console.log("serial:" + seriesData)
         const barChartOptions = {
@@ -230,7 +230,7 @@
       })
       .catch((error) => console.error("Erro ao buscar o top 5 de pontuação:", error));
   }
-  
+
   document.addEventListener("DOMContentLoaded", updateUsuariosCount);
   document.addEventListener("DOMContentLoaded", updateTop5Pontuacao);
 
